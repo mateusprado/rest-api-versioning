@@ -5,7 +5,7 @@ class ApiConstraints
     @default = options[:default]
   end
 
-  dpef matches?(req)
-    @default || req.headers['Accept'].include?("application/mateusprado-api.v#{@version}") 
+  def matches?(req)
+    @default || req.headers['Accept'].include?("application/rest-api.v#{@version}") 
   end
 end
